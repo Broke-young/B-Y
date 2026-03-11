@@ -1,0 +1,12 @@
+* {
+  /* colors */
+  --white: #fffee9;
+  --light_yellow: #fffdb8;
+  --main_yellow: #fffa63;
+  --dark_yellow: #474500;
+  --black: #1a1900;
+
+  /* font */
+  --title: "jockey one", helvetica, sans-serif;
+  --text: "kiwi maru", helvetica, sans-serif;
+}
