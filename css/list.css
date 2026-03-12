@@ -1,29 +1,138 @@
-/* Banneret i midten */
+body {
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* #dynamic-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+} */
+
+/* --- 3. DET STORE KATEGORI BANNER --- */
 .category-banner {
-  border: 3px solid black;
-  margin: 20px 0;
-  padding: 40px;
+  border: 2px solid black;
+  background: transparent;
+  padding: 60px 20px;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 40px; /* Dette sikrer, at banneret ikke overlapper knapperne */
 }
 
 .category-banner h2 {
-  font-size: 4rem;
-  letter-spacing: 0.5rem;
+  font-size: clamp(2rem, 10vw, 5rem); /* Gør teksten stor og responsiv */
+  font-weight: 900;
+  letter-spacing: 10px;
   margin: 0;
+  text-transform: uppercase;
 }
 
-/* Kortene */
-.recipe-card {
-  border: 2px solid black;
-  border-radius: 20px; /* De runde hjørner fra din tegning */
-  padding: 15px;
+/* --- 4. FILTRERING OG SORTERING (Knapperne) --- */
+#controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Sørger for at de hopper ned på linjen hvis skærmen er lille */
+  gap: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+#sorter,
+#filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+button {
   background: white;
-  transition: transform 0.2s;
+  border: 2px solid black;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: black;
+  color: #f9f06b;
+}
+
+/* --- 5. GRID TIL OPSKRIFTER --- */
+.productlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  padding-bottom: 50px;
+}
+
+/* --- 6. OPSKRIFTSKORT (De afrundede hvide kort) --- */
+.recipe-card {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 35px; /* De store bløde hjørner fra din skitse */
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: scale(1.02);
 }
 
 .img-box {
-  border: 1px solid #ccc;
-  background: #e0e0e0;
-  aspect-ratio: 16/9;
+  width: 100%;
+  aspect-ratio: 1.2 / 1; /* Gør billedrammen lidt bredere end den er høj */
+  overflow: hidden;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recipe-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.difficulty-text {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #333;
   margin-bottom: 10px;
+}
+
+.recipe-desc {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+}
+
+/* --- 7. LINKS --- */
+a {
+  text-decoration: none;
+  color: inherit;
 }
