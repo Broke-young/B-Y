@@ -1,16 +1,5 @@
 const grid = document.querySelector(".grid_1_1_1_1");
 
-const allowedCuisines = [
-  "Japanese",
-  "Italian",
-  "Indian",
-  "Pakistani",
-  "Thai",
-  "Brazilian",
-  "Mexican",
-  "Greek",
-];
-
 fetch("https://dummyjson.com/recipes")
   .then((response) => response.json())
   .then((data) => {
