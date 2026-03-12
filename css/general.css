@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Jockey+One&family=Kiwi+Maru&display=swap");
+
 * {
   /* colors */
   --white: #fffee9;
@@ -9,4 +11,40 @@
   /* font */
   --title: "jockey one", helvetica, sans-serif;
   --text: "kiwi maru", helvetica, sans-serif;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--main_yellow);
+  color: var(--dark_yellow);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--title);
+}
+
+p {
+  font-family: var(--text);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 15vh;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--main_yellow);
+  background-image: url("../img/header_line.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
 }
