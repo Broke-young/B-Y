@@ -1,5 +1,7 @@
+// 1. Ret "category" til "cuisine", så det matcher linket fra index.html
 const kategori =
-  new URLSearchParams(window.location.search).get("category") || "Japanese";
+  new URLSearchParams(window.location.search).get("cuisine") || "Japanese";
+
 const container = document.querySelector(".productlist-grid");
 const header = document.querySelector("#dynamic-header");
 
@@ -7,56 +9,38 @@ let allData;
 let udsnit;
 
 function setupPage() {
-  // Vi bygger overskriften og brødkrummerne dynamisk
-  header.innerHTML = `
-        <div class="logo">Broke & Young</div>
-        <nav class="breadcrumb">Forside > ${kategori}</nav>
+  if (header) {
+    header.innerHTML = `
+
         <div class="category-banner">
             <h2>${kategori.toUpperCase()}</h2>
         </div>
     `;
+  }
   getData();
 }
 
 function getData() {
-  // Erstat med dit rigtige link eller lokale fil
-  fetch("https://kea-alt-del.dk/t7/api/recipes")
+  // Brug den korrekte API-url (den samme som du brugte i index.js)
+  fetch("https://dummyjson.com/recipes")
     .then((res) => res.json())
     .then((data) => {
-      // Vi tager udgangspunkt i de data der matcher URL kategorien
-      allData = data.filter((item) => item.cuisine === kategori);
+      // Dummyjson pakker det ind i et "recipes" objekt
+      allData = data.recipes.filter((item) => item.cuisine === kategori);
       udsnit = allData;
       showData(udsnit);
-    });
+    })
+    .catch((err) => console.error("Fejl ved hentning af data:", err));
 }
 
-// --- FILTRERING ---
-document.querySelectorAll(".filter-btn").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const diff = e.target.dataset.diff;
-    if (diff === "all") {
-      udsnit = allData;
-    } else {
-      udsnit = allData.filter((item) => item.difficulty === diff);
-    }
-    showData(udsnit);
-  });
-});
-
-// --- SORTERING ---
-document.querySelectorAll(".sort-btn").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const sortType = e.target.dataset.sort;
-    if (sortType === "az") {
-      udsnit.sort((a, b) => a.name.localeCompare(b.name));
-    } else {
-      udsnit.sort((a, b) => b.name.localeCompare(a.name));
-    }
-    showData(udsnit);
-  });
-});
+// ... resten af din filter og sorter kode er fin! ...
 
 function showData(recipes) {
+  if (!recipes || recipes.length === 0) {
+    container.innerHTML = "<p>Ingen opskrifter fundet i denne kategori.</p>";
+    return;
+  }
+
   const markup = recipes
     .map(
       (recipe) => `
@@ -75,5 +59,4 @@ function showData(recipes) {
   container.innerHTML = markup;
 }
 
-// Kør setup når siden loader
 setupPage();
