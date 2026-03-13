@@ -3,12 +3,17 @@ h2 {
 }
 
 .sec {
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 
 .sec1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
   img {
-    margin-bottom: 1rem;
+    max-width: 1000px;
   }
   p {
     max-width: 1000px;
@@ -42,4 +47,21 @@ h2 {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding: 1.5rem 2rem;
+}
+
+@media (max-width: 425px) {
+  .grid_1_1_1_1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 0.5rem;
+  }
+  .sec2 {
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .button {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+  }
 }
