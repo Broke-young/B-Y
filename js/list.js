@@ -75,7 +75,8 @@ function showData(recipes) {
                 </div>
                 <h3>${recipe.name}</h3>
                 <p class="difficulty-text">${recipe.difficulty} Difficulty</p>
-                <p class="recipe-desc">Lorem ipsum dolor sit amet.</p>
+                <p class="recipe-desc">Preptime: ${recipe.prepTimeMinutes} | Cooktime: ${recipe.cookTimeMinutes}</p>
+                 <p class="recipe-desc">Ratings: ${recipe.rating}</p>
             </article>
         </a>
     `,
