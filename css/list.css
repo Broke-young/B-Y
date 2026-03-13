@@ -34,15 +34,18 @@
   font-weight: bold;
 }
 
-button {
-  background: white;
-  border: 2px solid black;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.2s;
+.button {
+  font-family: var(--title);
+  font-size: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--dark_yellow);
+  border-radius: 30px;
+  background-image: url("../img/button_border.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 1.5rem 2rem;
 }
-
 button:hover {
   background-color: black;
   color: #f9f06b;
