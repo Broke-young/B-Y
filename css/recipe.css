@@ -1,4 +1,4 @@
-main#recipe-page {
+main {
   background-color: var(--main_yellow);
   padding: 20px;
   max-width: 1000px;
@@ -13,6 +13,10 @@ main#recipe-page {
   font-family: var(--text);
   font-size: 0.8rem;
   margin-bottom: 20px;
+}
+
+.breadcrumb a {
+  font-family: var(--text);
 }
 
 .recipe-top {
@@ -103,7 +107,7 @@ main#recipe-page {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 425px) {
   .recipe-top,
   .recipe-bottom {
     grid-template-columns: 1fr;
@@ -111,6 +115,20 @@ main#recipe-page {
   }
 
   #recipe-title-container h1 {
-    font-size: 2.5rem;
+    font-size: 1.7rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .recipe-bottom h2,
+  method-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .recipe-bottom,
+  #method-container {
+    font-size: 0.9rem;
   }
 }

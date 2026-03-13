@@ -14,7 +14,7 @@ function setupPage() {
   }
   if (headerContainer) {
     headerContainer.innerHTML = `
-        <p class="breadcrumb"><a class="breadcrumb" href="index.html">Forside</a> > ${kategori}</p>
+        <p><a class="breadcrumb" href="index.html">Forside</a> > ${kategori}</p>
         <div class="category-banner">
             <h2>${kategori.toUpperCase()}</h2>
         </div>
@@ -74,9 +74,9 @@ function showData(recipes) {
                     <img src="${recipe.image}" alt="${recipe.name}">
                 </div>
                 <h3>${recipe.name}</h3>
-                <p class="difficulty-text">${recipe.difficulty} Difficulty</p>
-                <p class="recipe-desc">Preptime: ${recipe.prepTimeMinutes} | Cooktime: ${recipe.cookTimeMinutes}</p>
-                 <p class="recipe-desc">Ratings: ${recipe.rating}</p>
+                <p class="recipe-text">${recipe.difficulty} Difficulty</p>
+                <p class="recipe-text">Preptime: ${recipe.prepTimeMinutes} | Cooktime: ${recipe.cookTimeMinutes}</p>
+                 <p class="recipe-text">Ratings: ${recipe.rating}</p>
             </article>
         </a>
     `,

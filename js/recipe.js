@@ -37,28 +37,19 @@ function getRecipeData() {
 function showRecipe(recipe) {
   mainPage.classList.remove("hide");
   errorMessage.classList.add("hide");
-
-  breadcrumb.innerHTML = `<p><a class="breadcrumb" href="index.html">Forside</a> > <a class="breadcrumb" href="list.html">${recipe.cuisine}</a> > ${recipe.name}</p>`;
-
-  // 3. Indsæt billede
+  breadcrumb.innerHTML = `<p class="breadcrumb"><a class="breadcrumb" href="index.html">Forside</a> > <a class="breadcrumb" href="list.html">${recipe.cuisine}</a> > ${recipe.name}</p>`;
   imageContainer.innerHTML = `<img src="${recipe.image}" alt="${recipe.name}">`;
-
-  // 4. Indsæt titel og undertitel (Køkken + Sværhedsgrad)
   titleContainer.innerHTML = `
         <h1>${recipe.name}</h1>
         <p class="subtitle">${recipe.cuisine} - ${recipe.difficulty} Difficulty</p>
     `;
 
-  // 5. Loop ingredienser igennem og skab <li>
   let ingredientsMarkup = "";
   recipe.ingredients.forEach((ingrediens) => {
-    // Wireframen har små cirkler som bullets - det fikser vi i CSS
     ingredientsMarkup += `<li>${ingrediens}</li>`;
   });
   ingredientsList.innerHTML = ingredientsMarkup;
 
-  // 6. Indsæt fremgangsmåde.
-  // Dummyjson har instruktionerne som et array. Vi samler dem til tekst.
   const methodMarkup = recipe.instructions
     .map((step) => `<p>${step}</p>`)
     .join("");
