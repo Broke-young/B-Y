@@ -1,5 +1,5 @@
 main#recipe-page {
-  background-color: var(--main_yellow); /* Farven fra general.css */
+  background-color: var(--main_yellow);
   padding: 20px;
   max-width: 1000px;
   margin: 0 auto;
@@ -17,17 +17,17 @@ main#recipe-page {
 
 .recipe-top {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* To lige store kolonner */
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   margin-bottom: 50px;
 }
 
 #recipe-image-container img {
   width: 100%;
-  aspect-ratio: 1/1; /* Gør billedet kvadratisk */
+  aspect-ratio: 1/1;
   object-fit: cover;
   border: 3px solid var(--black);
-  border-radius: 5px; /* Lille afrunding fra wireframe kanten */
+  border-radius: 5px;
 }
 
 #recipe-title-container h1 {
@@ -44,10 +44,9 @@ main#recipe-page {
   margin: 0;
 }
 
-/* --- 4. BUND SEKTION (Ingredienser + Fremgangsmåde) --- */
 .recipe-bottom {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* Ingredienser er smal, Fremgangsmåde er bred */
+  grid-template-columns: 1fr 2fr;
   gap: 50px;
   align-items: flex-start;
 }
@@ -59,9 +58,8 @@ main#recipe-page {
   margin-bottom: 20px;
 }
 
-/* Wireframe style bullets (små cirkler) */
 #ingredients-list {
-  list-style-type: none; /* Fjern standard bullets */
+  list-style-type: none;
   padding-left: 0;
 }
 
@@ -73,7 +71,6 @@ main#recipe-page {
   position: relative;
 }
 
-/* Skab den lille cirkel bullet fra wireframen */
 #ingredients-list li::before {
   content: "";
   position: absolute;
@@ -85,7 +82,6 @@ main#recipe-page {
   border-radius: 50%;
 }
 
-/* Fremgangsmåde tekst */
 #method-text p {
   font-family: var(--text);
   font-size: 1rem;
@@ -93,7 +89,6 @@ main#recipe-page {
   margin-bottom: 15px;
 }
 
-/* --- 5. FEJL MEDDELELSE --- */
 #error-message {
   text-align: center;
   padding: 100px 20px;
@@ -108,11 +103,10 @@ main#recipe-page {
   cursor: pointer;
 }
 
-/* --- 6. RESPONSIVT LAYOUT (Mobil) --- */
 @media (max-width: 768px) {
   .recipe-top,
   .recipe-bottom {
-    grid-template-columns: 1fr; /* Stack kolonnerne på mobil */
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
