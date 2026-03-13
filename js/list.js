@@ -1,17 +1,20 @@
-// 1. Ret "category" til "cuisine", så det matcher linket fra index.html
-const kategori =
-  new URLSearchParams(window.location.search).get("cuisine") || "Japanese";
+const urlParams = new URLSearchParams(window.location.search);
+const kategori = urlParams.get("cuisine");
 
 const container = document.querySelector(".productlist-grid");
-const header = document.querySelector("#dynamic-header");
+const headerContainer = document.querySelector("#dynamic-header");
 
-let allData;
+let allData; //
 let udsnit;
 
 function setupPage() {
-  if (header) {
-    header.innerHTML = `
-
+  if (!kategori) {
+    window.location.href = "index.html";
+    return;
+  }
+  if (headerContainer) {
+    headerContainer.innerHTML = `
+        <p class="breadcrumb"><a class="breadcrumb" href="index.html">Forside</a> > ${kategori}</p>
         <div class="category-banner">
             <h2>${kategori.toUpperCase()}</h2>
         </div>
@@ -21,37 +24,60 @@ function setupPage() {
 }
 
 function getData() {
-  // Brug den korrekte API-url (den samme som du brugte i index.js)
   fetch("https://dummyjson.com/recipes")
     .then((res) => res.json())
     .then((data) => {
-      // Dummyjson pakker det ind i et "recipes" objekt
-      allData = data.recipes.filter((item) => item.cuisine === kategori);
+      allData = data.recipes.filter(
+        (item) => item.cuisine.toLowerCase() === kategori.toLowerCase(),
+      );
       udsnit = allData;
       showData(udsnit);
-    })
-    .catch((err) => console.error("Fejl ved hentning af data:", err));
+    });
 }
 
-// ... resten af din filter og sorter kode er fin! ...
+document.querySelectorAll(".sort-btn").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const sortType = e.target.dataset.sort;
+    if (sortType === "az") {
+      udsnit.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortType === "za") {
+      udsnit.sort((a, b) => b.name.localeCompare(a.name));
+    }
+    showData(udsnit);
+  });
+});
+
+document.querySelectorAll(".filter-btn").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const diff = e.target.dataset.diff;
+    if (diff === "all") {
+      udsnit = allData;
+    } else {
+      udsnit = allData.filter((item) => item.difficulty === diff);
+    }
+    showData(udsnit);
+  });
+});
 
 function showData(recipes) {
   if (!recipes || recipes.length === 0) {
-    container.innerHTML = "<p>Ingen opskrifter fundet i denne kategori.</p>";
+    container.innerHTML = "<p>Ingen opskrifter fundet.</p>";
     return;
   }
 
   const markup = recipes
     .map(
       (recipe) => `
-        <article class="recipe-card">
-            <div class="img-box">
-                <img src="${recipe.image}" alt="${recipe.name}">
-            </div>
-            <h3>${recipe.name}</h3>
-            <p class="difficulty-text">${recipe.difficulty} Difficulty</p>
-            <p class="recipe-desc">Lorem ipsum dolor sit amet.</p>
-        </article>
+        <a href="recipe.html?id=${recipe.id}" class="recipe-link">
+            <article class="recipe-card">
+                <div class="img-box">
+                    <img src="${recipe.image}" alt="${recipe.name}">
+                </div>
+                <h3>${recipe.name}</h3>
+                <p class="difficulty-text">${recipe.difficulty} Difficulty</p>
+                <p class="recipe-desc">Lorem ipsum dolor sit amet.</p>
+            </article>
+        </a>
     `,
     )
     .join("");
