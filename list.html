@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/list.css" />
+    <script src="js/general.js" defer></script>
     <script src="js/list.js" defer></script>
   </head>
   <body>
-    <header id="dynamic-header"></header>
+    <header class="flex">
+      <button class="burger">
+        <img src="img/menu.svg" alt="Menu knap" />
+      </button>
+      <nav class="menu"></nav>
+      <a href="index.html">
+        <img src="img/logo.svg" alt="Broke & young" class="logo" />
+      </a>
+      <img src="img/search.svg" alt="Søgefelt" class="search" />
+      <div class="overlay"></div>
+    </header>
+
+    <div id="dynamic-header"></div>
     <section id="controls">
       <div id="sorter">
         <span>Sorter efter:</span>
