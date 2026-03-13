@@ -131,3 +131,16 @@ header {
   opacity: 1;
   pointer-events: all;
 }
+
+@media (max-width: 425px) {
+  body {
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: var(--main_yellow);
+    color: var(--dark_yellow);
+  }
+  .menu {
+    width: 80vw;
+    padding: 2rem;
+  }
+}
