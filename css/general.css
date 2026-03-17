@@ -11,13 +11,20 @@
   /* font */
   --title: "jockey one", helvetica, sans-serif;
   --text: "kiwi maru", helvetica, sans-serif;
+
+  scroll-behavior: smooth;
 }
 
 body {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   background-color: var(--main_yellow);
   color: var(--dark_yellow);
+}
+
+.max_width {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 h1,
@@ -63,6 +70,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 3rem;
 }
 
 .burger {
@@ -72,15 +80,13 @@ header {
 }
 
 .menu {
-  display: flex;
-  flex-direction: column;
   position: fixed;
   top: 0;
   left: -100%;
   background-color: var(--main_yellow);
   width: 30vw;
   height: 100vh;
-  padding: 3rem;
+  padding: 5rem 3rem;
   transition: left 1s ease-out;
   overflow-y: auto;
   overflow-x: hidden;
@@ -89,7 +95,8 @@ header {
   z-index: 10;
 }
 
-.menu.active {
+.menu.active,
+.close_menu.active {
   left: 0;
 }
 
@@ -101,6 +108,21 @@ header {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center bottom;
+}
+
+.menu_insert {
+  display: flex;
+  flex-direction: column;
+}
+
+.close_menu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  max-width: 50px;
 }
 
 .logo {
@@ -133,14 +155,15 @@ header {
 }
 
 @media (max-width: 425px) {
-  body {
+  .max_width {
     max-width: 300px;
-    margin: 0 auto;
-    background-color: var(--main_yellow);
-    color: var(--dark_yellow);
-  }
-  .menu {
-    width: 80vw;
-    padding: 2rem;
+    body {
+      background-color: var(--main_yellow);
+      color: var(--dark_yellow);
+    }
+    .menu {
+      width: 80vw;
+      padding: 4rem 2rem;
+    }
   }
 }

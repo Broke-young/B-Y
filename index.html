@@ -15,7 +15,12 @@
       <button class="burger">
         <img src="img/menu.svg" alt="Menu knap" />
       </button>
-      <nav class="menu"></nav>
+      <nav class="menu">
+        <button class="close_menu">
+          <img src="img/close_menu.svg" alt="Luk menu" />
+        </button>
+        <div class="menu_insert"></div>
+      </nav>
       <a href="index.html">
         <picture>
           <source srcset="img/logo_small.svg" media="(max-width: 425px)" />
@@ -26,19 +31,25 @@
       <div class="overlay"></div>
     </header>
     <main>
-      <section class="sec sec1">
-        <img src="img/hero.svg" alt="forside billede" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae
-          tempore voluptatum perferendis voluptas natus molestiae veritatis
-          quae, porro officia reiciendis fugit sequi accusamus in minima
-          cupiditate aliquid expedita distinctio consequatur?
-        </p>
+      <section class="hero">
+        <img
+          src="img/hero1.svg"
+          alt="Hero illustration 1"
+          class="hero_img img1"
+        />
+        <img
+          src="img/hero2.svg"
+          alt="Hero illustration 2"
+          class="hero_img img2"
+        />
+        <a href="#cuisines" class="button button_start">Find opskrifter</a>
       </section>
-      <section class="sec sec2">
-        <h2>Vælg køkken</h2>
-        <div class="grid_1_1_1_1"></div>
-      </section>
+      <div class="max_width">
+        <section class="sec sec2" id="cuisines">
+          <h2>Vælg køkken</h2>
+          <div class="grid_1_1_1_1"></div>
+        </section>
+      </div>
     </main>
     <footer></footer>
   </body>
