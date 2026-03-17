@@ -1,7 +1,9 @@
 // burger menu - open and close
 const burger = document.querySelector(".burger");
 const menu = document.querySelector(".menu");
+const menuInsert = document.querySelector(".menu_insert");
 const overlay = document.querySelector(".overlay");
+const closeMenu = document.querySelector(".close_menu");
 
 burger.addEventListener("click", () => {
   menu.classList.toggle("active");
@@ -46,5 +48,11 @@ fetch("https://dummyjson.com/recipes")
       `;
     });
 
-    menu.innerHTML = markup;
+    menuInsert.innerHTML = markup;
   });
+
+//   close menu
+closeMenu.addEventListener("click", () => {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
+});
