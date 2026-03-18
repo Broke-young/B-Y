@@ -62,3 +62,17 @@ function showError() {
 }
 
 setupRecipePage();
+
+const form = document.querySelector(".review_form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // stop reload
+
+  const formData = new FormData(form);
+
+  const name = formData.get("name");
+  const rating = formData.get("rating");
+  const comment = formData.get("comment");
+
+  console.log(name, rating, comment);
+});

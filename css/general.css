@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jockey+One&family=Kiwi+Maru&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Walter+Turncoat&display=swap");
 * {
   /* colors */
   --white: #fffee9;
@@ -9,7 +8,7 @@
   --black: #1a1900;
 
   /* font */
-  --title: "jockey one", helvetica, sans-serif;
+  --title: "Walter Turncoat", helvetica, sans-serif;
   --text: "kiwi maru", helvetica, sans-serif;
 
   scroll-behavior: smooth;
@@ -154,16 +153,74 @@ header {
   pointer-events: all;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--main_yellow);
+  background-image: url("../img/header_line.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.footer_click {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin: 2rem;
+  gap: 2rem;
+  img {
+    width: 70px;
+  }
+}
+
+.footer_logo {
+  max-width: 300px;
+}
+
 @media (max-width: 425px) {
   .max_width {
     max-width: 300px;
-    body {
-      background-color: var(--main_yellow);
-      color: var(--dark_yellow);
+  }
+  body {
+    background-color: var(--main_yellow);
+    color: var(--dark_yellow);
+  }
+  .menu {
+    width: 80vw;
+    padding: 4rem 2rem;
+  }
+  footer {
+    display: block;
+  }
+  footer.flex {
+    display: block;
+    position: relative;
+    height: 18vh;
+  }
+  footer section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .footer_click {
+    display: flex;
+    align-items: center;
+    img {
+      width: 50px;
     }
-    .menu {
-      width: 80vw;
-      padding: 4rem 2rem;
-    }
+  }
+  .footer_text {
+    display: none;
+  }
+
+  .footer_logo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
