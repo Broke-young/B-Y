@@ -113,6 +113,67 @@ main {
   cursor: pointer;
 }
 
+.review_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 600px;
+  margin: 10rem auto;
+}
+
+.form_name {
+  grid-area: 1/1/2/2;
+}
+
+.form_rating {
+  grid-area: 1/2/1/3;
+}
+
+.form_comment {
+  grid-area: 2/1/3/3;
+  width: 100%;
+}
+
+.submit {
+  grid-area: 3/1/4/3;
+}
+
+label {
+  font-family: var(--title);
+  font-size: 1.5rem;
+  color: var(--dark_yellow);
+}
+
+#name,
+#rating,
+#comment {
+  background-color: var(--light_yellow);
+  padding: 1rem;
+  border-radius: 15px;
+  font-family: var(--text);
+  color: var(--dark_yellow);
+  width: 100%;
+  border: 1px var(--dark_yellow) solid;
+}
+
+.submit {
+  font-family: var(--title);
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--dark_yellow);
+  border-radius: 30px;
+  background-image: url("../img/button_border.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 1.5rem 2rem;
+  transition: transform 0.3s ease-out;
+}
+
+.submit:hover {
+  transform: scale(1.05);
+}
+
 @media (max-width: 425px) {
   .recipe-top,
   .recipe-bottom {
@@ -136,5 +197,21 @@ main {
   .recipe-bottom,
   #method-container {
     font-size: 0.9rem;
+  }
+
+  .review_form {
+    display: block;
+    margin: 2rem 0;
+  }
+
+  .form_name,
+  .form_rating,
+  .form_comment {
+    margin-bottom: 1.5rem;
+  }
+
+  .submit {
+    width: 100%;
+    text-align: center;
   }
 }

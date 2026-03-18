@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
     <title>Recipe</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/general.css" />
@@ -15,46 +16,101 @@
       <button class="burger">
         <img src="img/menu.svg" alt="Menu knap" />
       </button>
-      <nav class="menu"></nav>
+      <nav class="menu">
+        <button class="close_menu">
+          <img src="img/close_menu.svg" alt="Luk menu" />
+        </button>
+        <div class="menu_insert"></div>
+      </nav>
       <a href="index.html">
         <picture>
-          <source srcset="img/logo_small.svg" media="(max-width: 425px)" />
-          <img src="img/logo.svg" />
+          <source
+            srcset="img/logo_small.svg"
+            media="(max-width: 425px)"
+            alt="Broke and Young"
+          />
+          <img src="img/logo.svg" alt="Broke and Young" />
         </picture>
       </a>
       <img src="img/search.svg" alt="Søgefelt" class="search" />
       <div class="overlay"></div>
     </header>
 
-    <div class="max_width">
-      <main id="recipe-page" class="hide">
-        <nav id="dynamic-breadcrumb"></nav>
+    <main id="recipe-page" class="hide max_width">
+      <nav id="dynamic-breadcrumb"></nav>
 
-        <section class="recipe-top">
-          <div id="recipe-image-container"></div>
+      <section class="recipe-top">
+        <div id="recipe-image-container"></div>
 
-          <div id="recipe-title-container"></div>
-        </section>
+        <div id="recipe-title-container"></div>
+      </section>
 
-        <section class="recipe-bottom">
-          <div id="ingredients-container">
-            <h2>Ingredienser</h2>
-            <ul id="ingredients-list"></ul>
-          </div>
+      <section class="recipe-bottom">
+        <div id="ingredients-container">
+          <h2>Ingredienser</h2>
+          <ul id="ingredients-list"></ul>
+        </div>
 
-          <div id="method-container">
-            <h2>Fremgangsmåde</h2>
-            <div id="method-text"></div>
-          </div>
-        </section>
-      </main>
-
+        <div id="method-container">
+          <h2>Fremgangsmåde</h2>
+          <div id="method-text"></div>
+        </div>
+      </section>
       <div id="error-message" class="hide">
         <p>
           Opskriften kunne desværre ikke findes. Prøv at gå tilbage til listen.
         </p>
         <a href="index.html" class="button">Tilbage til forsiden</a>
       </div>
-    </div>
+
+      <form class="review_form">
+        <!-- Name -->
+        <div class="form_name">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <!-- Rating -->
+        <div class="form_rating">
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating" required>
+            <option value="">Choose rating</option>
+            <option value="1">1 ⭐</option>
+            <option value="2">2 ⭐</option>
+            <option value="3">3 ⭐</option>
+            <option value="4">4 ⭐</option>
+            <option value="5">5 ⭐</option>
+          </select>
+        </div>
+
+        <!-- Comment -->
+        <div class="form_comment">
+          <label for="comment">Comment</label>
+          <textarea id="comment" name="comment" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="submit">Submit review</button>
+      </form>
+    </main>
+    <footer class="flex">
+      <section>
+        <div class="footer_click">
+          <img src="img/cookie.svg" alt="Cookies" />
+          <p class="footer_text">Cookies</p>
+        </div>
+        <div class="footer_click">
+          <img src="img/mail.svg" alt="Mail" />
+          <p class="footer_text">Broke@young.dk</p>
+        </div>
+      </section>
+      <picture class="footer_logo">
+        <source
+          srcset="img/logo_small.svg"
+          media="(max-width: 425px)"
+          alt="Broke and Young"
+        />
+        <img src="img/logo.svg" alt="Broke and Young" />
+      </picture>
+    </footer>
   </body>
 </html>

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
     <title>Broke & Young</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/general.css" />
@@ -23,8 +24,12 @@
       </nav>
       <a href="index.html">
         <picture>
-          <source srcset="img/logo_small.svg" media="(max-width: 425px)" />
-          <img src="img/logo.svg" />
+          <source
+            srcset="img/logo_small.svg"
+            media="(max-width: 425px)"
+            alt="Broke and Young"
+          />
+          <img src="img/logo.svg" alt="Broke and Young" />
         </picture>
       </a>
       <img src="img/search.svg" alt="Søgefelt" class="search" />
@@ -42,7 +47,9 @@
           alt="Hero illustration 2"
           class="hero_img img2"
         />
-        <a href="#cuisines" class="button button_start">Find opskrifter</a>
+        <a href="#cuisines" class="button button_start" id="button_start"
+          >Find opskrifter</a
+        >
       </section>
       <div class="max_width">
         <section class="sec sec2" id="cuisines">
@@ -51,6 +58,25 @@
         </section>
       </div>
     </main>
-    <footer></footer>
+    <footer class="flex">
+      <section>
+        <div class="footer_click">
+          <img src="img/cookie.svg" alt="Cookies" />
+          <p class="footer_text">Cookies</p>
+        </div>
+        <div class="footer_click">
+          <img src="img/mail.svg" alt="Mail" />
+          <p class="footer_text">Broke@young.dk</p>
+        </div>
+      </section>
+      <picture class="footer_logo">
+        <source
+          srcset="img/logo_small.svg"
+          media="(max-width: 425px)"
+          alt="Broke and Young"
+        />
+        <img src="img/logo.svg" alt="Broke and Young" />
+      </picture>
+    </footer>
   </body>
 </html>
