@@ -7,7 +7,8 @@ Dette projekt har vi lavet i forbindelse med Tema 8, hvor vi har udviklet et dyn
 
 ## Links:
 
-- GitHub Pages: [indsæt link]
+- GitHub Pages: 
+https://broke-young.github.io/B-Y/recipe.html?id=9
 
 - Projektets GitHub Repository:
 https://github.com/Broke-young/B-Y
