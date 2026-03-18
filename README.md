@@ -163,7 +163,12 @@ Vi henter data fra et API i JSON-format.
 - **image** – Billede af retten
 
 # Formular og validering
-......
+Vi har lavet en formular, der giver brugeren mulighed for at bedømme opskrifterne på siden.
+
+### HTML-Validering:
+- `type="text"` -validerer tekst input
+- `required` -feltet skal udfyldes
+- `<textarea>` -tekstfeldt til længere tekst
 
 # Git og branches
 Vi har brugt GitHub til at kode denne hjemmeside sammen. 
